@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>users</title>
+</head>
+<script src="resources/angular.js"></script>
+<script src="resources/app.js"></script>
+<script src="resources/user_controller.js"></script>
+<script src="resources/userservice.js"></script>
+<body ng-app="myApp">
+<div ng-controller="UserController as uctrl">
+<table><tr>
+<td>id </td>
+<td>name</td>
+<tr>
+<tr ng-repeat="list in uctrl.userdata">
+<td>{{list.userId}} </td>
+<td>{{list.name}}</td>
+<!-- <td>{{list.username}}</td> -->
+<!-- <td>{{list.address}}</td> -->
+</tr>
+</table>
+<form name="user_add">
+ <input type="hidden" ng-model="ïd" /><br>
+Name:<input type="text" ng-model="name" placeholder="name"/><br>
+Email:<input type="text" ng-model="email" placeholder="email"/><br>
+<input type="submit" value="add" ng-click="uctrl.submit()"/>
+<input type="reset" value="reset" ng-click="uctrl.reset()"/>
+</form>
+</div>
+</body>
+</html>
