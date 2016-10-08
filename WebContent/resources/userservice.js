@@ -11,7 +11,8 @@ angular
 
 							var REST_SERVICE_URI = 'http://localhost:8081/CollaborationBackEnd';
 							var factory = {
-								fetchAllUserPage : fetchAllUserPage
+								fetchAllUserPage : fetchAllUserPage,
+								createUser : createUser
 							};
 
 							return factory;
@@ -28,9 +29,24 @@ angular
 												});
 								return deferred.promise;
 							}
-							function createUser(userdata) {
-								$http.post(REST_SERVICE_URI + "/user/create")
-								alert(" in user service:" + userdata)
+							
+							
+//							function createUser(userdata) {
+//								$http.get(REST_SERVICE_URI + "/user/create")
+//								alert(" in user service:" + userdata)
+//										.then(function(response) {
+//													deferred.resolve(response.data);
+//												},
+//												function(errResponse) {
+//													console.error('Error while fetching all user page');
+//													deferred.reject(errResponse);
+//												});
+//
+//							}
+							function createUser(userdata) {alert(" in user service:" + userdata)
+								var deferred = $q.defer();
+								$http.post(REST_SERVICE_URI + "/user/create",userdata)
+								
 										.then(function(response) {
 													deferred.resolve(response.data);
 												},
@@ -38,6 +54,6 @@ angular
 													console.error('Error while fetching all user page');
 													deferred.reject(errResponse);
 												});
-
+								return deferred.promise;
 							}
 						} ]);

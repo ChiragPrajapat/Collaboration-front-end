@@ -13,20 +13,29 @@
 <table><tr>
 <td>id </td>
 <td>name</td>
+<TD>ADDRESS</TD>
+<td>contact</td>
+<td>email</td>
 <tr>
 <tr ng-repeat="list in uctrl.userdata">
 <td>{{list.userId}} </td>
 <td>{{list.name}}</td>
-<!-- <td>{{list.username}}</td> -->
-<!-- <td>{{list.address}}</td> -->
+<td>{{list.address}}</td> 
+<td>{{list.contact}}</td>
+<td>{{list.email}}</td>
 </tr>
 </table>
-<form name="user_add">
- <input type="hidden" ng-model="ïd" /><br>
+<form name="myForm">
+ <input type="hidden" ng-model="userId" /><br>
 Name:<input type="text" ng-model="name" placeholder="name"/><br>
-Email:<input type="text" ng-model="email" placeholder="email"/><br>
-<input type="submit" value="add" ng-click="uctrl.submit()"/>
-<input type="reset" value="reset" ng-click="uctrl.reset()"/>
+Address:<input type="text" ng-model="address" placeholder="address"/><br>
+Username:<input type="text" ng-model="username" placeholder="username"/><br>
+Password:<input type="password" ng-model="password" placeholder="password"/><br>
+gender:<input type="text" ng-model="gender" placeholder="name"/><br>
+contact:<input type="text" ng-model="contact" placeholder="name"/><br>
+DOB:<input type="text" ng-model="dob" placeholder="dob"/><br>
+<input type="submit" value="add" ng-click="uctrl.submit()" />
+<input type="reset" value="reset" ng-click="uctrl.reset()" />
 </form>
 </div>
 </body>

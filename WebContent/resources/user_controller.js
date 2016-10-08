@@ -4,11 +4,11 @@
 angular.module('myApp').controller('UserController', ['$scope', 'UserService', function($scope, UserService) {
 	alert('calling controller');
     var self = this;
-    self.userdata={userId:null,name:'',address:'',username:''};
+    self.userdata={userId:null,name:'',address:''};
     self.users=[]; 
     self.submit = submit;
  
-    self.reset = reset;
+    self.reset = reset();
  
     fetchAllUserPage();
     
@@ -30,7 +30,7 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
             function(u){
             	self.userdata=u;
             	console.log(u);
-            	alert("call create user controller")
+            	alert("call create user controller");
             },
             function(errResponse){
                 console.error('Error while creating user');
@@ -39,22 +39,26 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     }
      
     function submit() {
-    	alert("call submit 1")
-        if(self.userdata.id===null){
+    	alert("call submit 1");
+        console.log('Saving New user', self.userdata);
+       // createUser(self.userdata);
+//        if(self.userdata.userId===null){
+        	alert("user null -- creating new")
             console.log('Saving New user', self.userdata);
-            createUser(userdata);
-        }else{
-            updateUser(self.userdata, self.userdata.id);
-            console.log(' UserData updated with id ', self.userdata.id);
-        }
-    	alert("call submit 2")
+            createUser(self.userdata);
+//        }else{
+          //  updateUser(self.userdata, self.userdata.id);
+//        	alert("user exist -- updating ")
+//            console.log(' UserData updated with id ', self.userdata.userId);
+//        }
+    	alert("call submit 2");
         reset();
     }
   
  
    function reset(){
         self.user={id:null,username:'',address:'',email:''};
-        $scope.myForm.$setPristine(); //reset Form
+//        $scope.myForm.$setPristine(); //reset Form
     }
  
 }]);
