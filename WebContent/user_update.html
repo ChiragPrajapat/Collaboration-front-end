@@ -2,39 +2,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>users</title>
-</head>
+<title>User : Update </title>
 <script src="resources/angular.js"></script>
 <script src="resources/app.js"></script>
 <script src="resources/user_controller.js"></script>
 <script src="resources/userservice.js"></script>
+</head>
 <body ng-app="myApp">
 <div ng-controller="UserController as uctrl">
-<table><tr>
-<td>id </td>
-<td>name</td>
-<TD>ADDRESS</TD>
-<td>username</td>
-<td>password</td>
-<td>gender</td>
-<td>contact</td>
-<td>dob</td>
-<td>email</td>
-<tr>
-<tr ng-repeat="list in uctrl.userdata">
-<td><span ng-bind="list.userId"></span> </td>
-<td><span ng-bind="list.u_name"></span></td>
-<td><span ng-bind="list.u_address"></span></td> 
-<td><span ng-bind="list.u_username"></span></td>
-<td><span ng-bind="list.u_password"></span></td>
-<td><span ng-bind="list.u_gender"></span></td>
-<td><span ng-bind="list.u_contact"></span></td>
-<td><span ng-bind="list.u_dob"></span></td>
-<td><span ng-bind="list.u_email"></span></td>
-<td><form name="myEdit"><input type="submit" value="Edit" ng-click="uctrl.edit(list.userId)"></form></td>
-<td><form name="myDelete"><input type="submit" value="Delete" ng-click="uctrl.remove(list.userId)"></form></td>
-</tr>
-</table>
 <form name="myForm">
  <input type="hidden" ng-model="userId" /><br><input type="hidden" ng-model="enabled" /><br>
 Name:<input type="text" ng-model="user.u_name" placeholder="name"/><br>
@@ -45,7 +20,7 @@ gender:<input type="text" ng-model="user.u_gender" placeholder="gender"/><br>
 contact:<input type="text" ng-model="user.u_contact" placeholder="contact"/><br>
 DOB:<input type="text" ng-model="user.u_dob" placeholder="dob"/><br>
 Email:<input type="text" ng-model="user.u_email" placeholder="Email"/><br>
-<input type="submit" value="save" ng-click="uctrl.submit()" />
+<input type="submit" value="update" ng-click="uctrl.updateUser(userId)" />
 <input type="reset" value="reset" ng-click="uctrl.reset()" />
 </form>
 </div>

@@ -10,9 +10,7 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     self.submit = submit;
     self.updateUser = updateUser;
     self.deleteUser = deleteUser;
-    self.reset = reset;
-    self.edit = edit;
-    self.remove = remove;
+    self.reset = reset();
  
     fetchAllUserPage();
     
@@ -47,21 +45,20 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     	alert("call submit 1");
         console.log('Saving New user', $scope.user);
     
-        if($scope.user.userId===null){
+//        if(self.userdata.userId===null){
         	alert("user null -- creating new")
             console.log('Saving New user', $scope.user);
             createUser($scope.user);
-        }else{
-             updateUser($scope.user, $scope.user.userId);
-         	alert("user exist -- updating ")
-            console.log(' UserData updated with id ', $scope.user.userId);
-        }
+//        }else{
+          //  updateUser(self.userdata, self.userdata.id);
+//        	alert("user exist -- updating ")
+//            console.log(' UserData updated with id ', self.userdata.userId);
+//        }
     	alert("call submit 2");
         reset();
     }
     function updateUser(user,userId){
-    	alert("In uctrl Update User :" + userId )
-        UserService.updateUser(user,userId)
+        UserService.updateUser(user, userId)
             .then(
             fetchAllUsers,
             function(errResponse){
@@ -71,8 +68,7 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     }
 
     function deleteUser(userId){
-    	alert("In controller delete User :" + userId)
-        UserService.deleteUser(userId)
+        UserService.deleteUser(id)
             .then(
             fetchAllUsers,
             function(errResponse){
@@ -82,21 +78,19 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     }
 
     function edit(userId){
-    	alert("in uctrl edit function:" + userId);
-        console.log('id to be edited',userId);
+    	alert("edit function:" + userId)
+        console.log('id to be edited', user.userId);
         for(var i = 0; i < self.users.length; i++){
-            if(self.users[i].userId === userId) {
-                $scope.user = angular.copy(self.users[i]);
+            if(self.users[i].userId === user.userId) {
+                self.user = angular.copy(self.users[i]);
                 break;
             }
         }
-      //  updateUser(userId);
     }
 
     function remove(userId){
-    	alert("in uctrl remove function:" + userId);
         console.log('id to be deleted', userId);
-        if($scope.user.userId === userId) {//clean form if the user to be deleted is shown there.
+        if(self.user.userId === userId) {//clean form if the user to be deleted is shown there.
             reset();
         }
         deleteUser(userId);

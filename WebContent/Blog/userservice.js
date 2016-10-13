@@ -41,10 +41,10 @@ angular.module('myApp').factory('UserService',['$http','$q',function($http, $q) 
 								return deferred.promise;
 							}
 							
-							   function updateUser(user,userId) {
+							   function updateUser(user, userId) {
 								   alert("update user :"+ userId);
 							        var deferred = $q.defer();
-							        $http.put(REST_SERVICE_URI+"/user/edit",user,userId)
+							        $http.put(REST_SERVICE_URI+"/user/edit/"+userId, user)
 							            .then(
 							            function (response) {
 							                deferred.resolve(response.data);
@@ -59,9 +59,9 @@ angular.module('myApp').factory('UserService',['$http','$q',function($http, $q) 
 							
 							
 							 function deleteUser(userId) {
-								 alert("in service delete:"+ userId);
+								 alert("update user :"+ userId);
 							        var deferred = $q.defer();
-							        $http.delete(REST_SERVICE_URI+"/user/delete",userId)
+							        $http.delete(REST_SERVICE_URI+"user/delete/"+userId)
 							            .then(
 							            function (response) {
 							                deferred.resolve(response.data);
