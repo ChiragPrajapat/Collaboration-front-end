@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home</title>
+
+<!-- BOOTSTRAP STYLES-->
+<link href="resources/assets/css/bootstrap.css" rel="stylesheet" />
+<!-- FONTAWESOME STYLES-->
+<link href="resources/assets/css/font-awesome.css" rel="stylesheet" />
+<!--CUSTOM BASIC STYLES-->
+<link href="resources/assets/css/basic.css" rel="stylesheet" />
+<!--CUSTOM MAIN STYLES-->
+<link href="resources/assets/css/custom.css" rel="stylesheet" />
+<!-- GOOGLE FONTS-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css' />
+</head>
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-cls-top " role="navigation"
+			style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Collaboration</a>
+			</div>
+
+			<div class="header-right">
+
+				<a href="message-task.html" class="btn btn-info" title="New Message"><b>30
+				</b><i class="fa fa-envelope-o fa-2x"></i></a> <a href="message-task.html"
+					class="btn btn-primary" title="New Task"><b>40 </b><i
+					class="fa fa-bars fa-2x"></i></a> <a href="login.html"
+					class="btn btn-danger" title="Logout"><i
+					class="fa fa-exclamation-circle fa-2x"></i></a>
+
+			</div>
+		</nav>
+		<!-- /. NAV TOP  -->
+		<nav class="navbar-default navbar-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav" id="main-menu">
+					<li>
+						<div class="user-img-div">
+							<img src="resources/assets/img/user.png" class="img-thumbnail" />
+
+							<div class="inner-text">
+								{{user.u_name}} <br /> <small>Last Login : 2 Weeks Ago
+								</small>
+							</div>
+						</div>
+
+					</li>
+
+
+					<li><a class="active-menu" href="index.html"><i
+							class="fa fa-dashboard "></i>Dashboard</a></li>
+					<li><a href="#"><i class="fa fa-desktop "></i>Blog <span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li><a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>Create</a>
+							</li>
+							<li><a href="notification.html"><i class="fa fa-bell "></i>views</a>
+							</li>
+						</ul></li>
+
+					<li><a href="gallery.html"><i class="fa fa-anchor "></i>Chats</a>
+					</li>
+
+					<li><a href="#"><i class="fa fa-yelp "></i>Event <span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li><a href="invoice.html"><i class="fa fa-coffee"></i>Create</a>
+							</li>
+							<li><a href="pricing.html"><i class="fa fa-flash "></i>upcoming
+									events</a></li>
+							<li><a href="social.html"><i class="fa fa-send "></i>Social</a>
+							</li>
+
+							<li><a href="message-task.html"><i
+									class="fa fa-recycle "></i>Messages & Tasks</a></li>
+
+
+						</ul></li>
+					<li><a href="#"><i class="fa fa-bicycle "></i>Account <span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+
+							<li><a href="form.html"><i class="fa fa-desktop "></i>Sign
+									Up </a></li>
+							<li><a href="form-advance.html"><i
+									class="fa fa-sign-in "></i>Login</a></li>
+
+
+						</ul></li>
+					<li><a href="gallery.html"><i class="fa fa-anchor "></i>Gallery</a>
+					</li>
+
+					<li><a href="#"><i class="fa fa-sitemap "></i>Placement <span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li><a href="#"><i class="fa fa-bicycle "></i>Apply</a></li>
+							<li><a href="#"><i class="fa fa-flask "></i>Available
+									jobs</a></li>
+						</ul></li>
+
+					<li><a href="table.html"><i class="fa fa-flash "></i>About
+							us </a></li>
+					<li><a href="blank.html"><i class="fa fa-square-o "></i>Contact
+							Us</a></li>
+				</ul>
+
+			</div>
+
+		</nav>
+		<!-- /. NAV SIDE  -->
+		<!--Search Section Start-->
+
+
+		<br> <br>
+		<div class="row ">
+
+			<div class="form-group input-group col-md-6 col-md-offset-3">
+
+				<input type="text" class="form-control" placeholder="Enter Keywords" />
+
+				<span class="input-group-btn"> <a class="btn btn-primary"
+					href="index.html"> <i class="fa fa-gear fa-spin"></i>&nbsp;&nbsp;SEARCH
+						HERE
+				</a>
+				</span>
+			</div>
+			<br />
+
+		</div>
+		<!--Search Section end-->
+		<!-- /. ROW  -->
+					       <div id="page-wrapper">
+            <div id="page-inner">
+ <br /> <a class="btn btn-success" href="create_blog.html"> CREATE NEW </a> <br /> <br />
+ 
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel panel-primary">
+					<!-- Default panel contents -->
+					<div class="panel-heading">Blogs</div>
+
+					<!-- Table -->
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Title</th>
+								<th>On Date</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="list-group-item-success">
+								
+								
+								<td>100$ Pending Payment</td>
+								<td>23rd June</td>
+								<td><a href="#" class="btn btn-primary ">View</a></td>
+							</tr>
+											<tr class="list-group-item-danger">
+								<td>90 Orders To Process</td>
+								<td>2nd December</td>
+								<td><a href="#" class="btn btn-info">In Process</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+
+	<hr />
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-md-12">All Rights Reserved | &copy
+				Yourdomain.com</div>
+
+		</div>
+
+	</div>
+
+</body>
+</html>

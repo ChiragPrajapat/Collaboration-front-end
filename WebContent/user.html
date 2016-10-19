@@ -10,10 +10,11 @@
 <script src="resources/userservice.js"></script>
 <body ng-app="myApp">
 <div ng-controller="UserController as uctrl">
-<table><tr>
+<table>
+<tr>
 <td>id </td>
 <td>name</td>
-<tr>
+</tr>
 <tr ng-repeat="list in uctrl.userdata">
 <td><span ng-bind="list.userId"></span> </td>
 <td><span ng-bind="list.u_name"></span></td>

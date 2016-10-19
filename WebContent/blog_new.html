@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="resources/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="resources/assets/css/font-awesome.css" rel="stylesheet" />
+       <!--CUSTOM BASIC STYLES-->
+    <link href="resources/assets/css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="resources/assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<script src="resources/angular.js"></script>
+<script src="resources/app.js"></script>
+<script src="resources/Blog/blog_controller.js"></script>
+<script src="resources/Blog/blogservice.js"></script>
+<body ng-app="myApp">
+     <div ng-controller="BlogController as bctrl">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Collaboration</a>
+            </div>
+
+            <div class="header-right">
+
+                <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
+                <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
+                <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
+
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            <img src="resources/assets/img/user.png" class="img-thumbnail" />
+
+                            <div class="inner-text">
+                                {{user.u_name}}
+                            <br />
+                                <small>Last Login : 2 Weeks Ago </small>
+                            </div>
+                        </div>
+
+                    </li>
+
+
+                    <li>
+                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard "></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-desktop "></i>Blog <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>Create</a>
+                            </li>
+                            <li>
+                                <a href="notification.html"><i class="fa fa-bell "></i>views</a>
+                            </li>  
+                        </ul>
+                    </li>
+                   
+                      <li>
+                        <a href="gallery.html"><i class="fa fa-anchor "></i>Chats</a>
+                    </li>
+                   
+                     <li>
+                        <a href="#"><i class="fa fa-yelp "></i>Event <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="invoice.html"><i class="fa fa-coffee"></i>Create</a>
+                            </li>
+                            <li>
+                                <a href="pricing.html"><i class="fa fa-flash "></i>upcoming events</a>
+                            </li>
+                             <li>
+                                <a href="social.html"><i class="fa fa-send "></i>Social</a>
+                            </li>
+                            
+                             <li>
+                                <a href="message-task.html"><i class="fa fa-recycle "></i>Messages & Tasks</a>
+                            </li>
+                            
+                           
+                        </ul>
+                    </li>
+                     <li>
+                        <a href="#"><i class="fa fa-bicycle "></i>Account <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                           
+                             <li>
+                                <a href="form.html"><i class="fa fa-desktop "></i>Sign Up </a>
+                            </li>
+                             <li>
+                                <a href="form-advance.html"><i class="fa fa-sign-in "></i>Login</a>
+                            </li>
+                             
+                           
+                        </ul>
+                    </li>
+                      <li>
+                        <a href="gallery.html"><i class="fa fa-anchor "></i>Gallery</a>
+                    </li>
+                   
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap "></i>Placement <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#"><i class="fa fa-bicycle "></i>Apply</a>
+                            </li>
+                             <li>
+                                <a href="#"><i class="fa fa-flask "></i>Available jobs</a>
+                            </li>
+                        </ul>
+                    </li>
+                   
+                    <li>
+                        <a href="table.html"><i class="fa fa-flash "></i>About us </a>
+                        
+                    </li>
+                    <li>
+                        <a href="blank.html"><i class="fa fa-square-o "></i>Contact Us</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>   <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">CREATE NEW BLOG</h1>
+
+                    </div>
+        
+                </div>
+         <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+               <div class="panel panel-info">
+                        <div class="panel-heading">
+                           CREATE
+                        </div>
+                        <div class="panel-body">
+                            <form role="form">
+                           <input type="hidden" ng-model="blog.b_id" /><br><input type="hidden" ng-model="enabled" />
+                                        <div class="form-group">
+                                            <label>Enter Title</label>
+                                            <input class="form-control" type="text"  ng-model="blog.b_title" >
+                                            <p class="help-block">This is your blog title.</p>
+                                        </div>
+                                            <div class="form-group">
+                                            <label>Write</label>
+                                            <textarea class="form-control" rows="3" ng-model="blog.b_content"></textarea>
+                                        </div>
+                                  
+                                 
+                                        <button type="submit" class="btn btn-info" value="{{!blog.b_id ? 'Create New' : 'Update'}}" ng-click="bctrl.submit()" ></button>
+
+                                    </form>
+                            </div>
+                        </div>
+                            </div>
+                <!-- /. ROW  -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-info">
+                            This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                          <br />
+                            Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <div id="footer-sec">
+        &copy; 2014 YourCompany | Design By : <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+    </div>
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="resources/assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="resources/assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="resources/assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="resources/assets/js/custom.js"></script>
+
+</div>
+</body>
+</html>
